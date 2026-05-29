@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS danielacampos_2026;
+USE danielacampos_2026;
+
+-- TABLA USUARIOS
+CREATE TABLE IF NOT EXISTS usuarios(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
+);
+
+-- TABLA PACIENTES
+CREATE TABLE IF NOT EXISTS pacientes(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    correo VARCHAR(100) NOT NULL
+);
+
+-- TABLA CITAS
+CREATE TABLE IF NOT EXISTS citas(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    paciente VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    area VARCHAR(100) NOT NULL,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    estado VARCHAR(50) DEFAULT 'Pendiente'
+);
+
+INSERT IGNORE INTO usuarios (usuario, password) VALUES ('admin', 'admin123');

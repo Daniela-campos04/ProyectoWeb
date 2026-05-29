@@ -19,20 +19,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 Session(app)
 
-CORS(
-    app,
-    supports_credentials=True,
-    origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:5174",
-        "http://127.0.0.1:5174",
-        "http://localhost:5175",
-        "http://127.0.0.1:5175",
-        "http://localhost:5176",
-        "http://127.0.0.1:5176"
-    ]
-)
+CORS( app, supports_credentials=True, origins=[ "http://localhost:5173", "https://fronted-web.vercel.app" ] )
 
 def obtener_conexion():
 
